@@ -6,7 +6,7 @@ on:
 jobs:
   deploy-update:
     name: deploy lambda function code updates to prod
-    uses: .github/workflows/update-lambda.yml
+    uses: ./.github/workflows/update-lambda.yml
     with:
       environment: production
     secrets:
