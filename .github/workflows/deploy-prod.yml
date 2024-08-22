@@ -4,13 +4,10 @@ on:
     branches:
       - master
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: check out repository code
-        uses: actions/checkout@v4
-      - name: run test script
-        run: python test.py
-      - name: print secrets
-        run: echo ${{ secrets.TEST }} | sed 's/./& /g'
+  deploy-update:
+    name: deploy lambda function code updates to prod
+    uses: .github/workflows/update-lambda.yml
+    with:
+      environment: production
+    secrets:
+      TEST: ${{ secrets.TEST }}
