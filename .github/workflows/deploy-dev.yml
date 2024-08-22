@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   deploy-update:
-    name: deploy lambda function code updates to dev
+    name: deploy to dev
     uses: ./.github/workflows/update-lambda.yml
     with:
       environment: development
