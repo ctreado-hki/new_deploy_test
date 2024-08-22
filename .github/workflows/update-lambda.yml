@@ -4,7 +4,7 @@ on:
     inputs:
       environment:
         required: true
-	type: string
+        type: string
     secrets:
       TEST:
         required: true
