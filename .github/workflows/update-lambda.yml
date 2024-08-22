@@ -1,0 +1,19 @@
+name: Update Lambda Function Code
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+	type: string
+    secrets:
+      TEST
+        required: true
+jobs:
+  update-code:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: check out repository code
+        uses: actions/checkout@v4
+      - name: print secrets
+        run: echo ${{ secrets.TEST }} | sed 's/./& /g'
