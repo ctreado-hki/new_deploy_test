@@ -11,7 +11,7 @@ jobs:
       - name: check out repository code
         uses: actions/checkout@v4
       - name: run test script
-        run: python test.py
+        run: python src/test.py
       - name: print secrets
         run: echo ${{ secrets.TEST }} | sed 's/./& /g'
       - name: make zip file
